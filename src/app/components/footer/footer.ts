@@ -37,16 +37,15 @@ export class FooterComponent {
 
 
   socialLinks: ISocialLink[] = [
-    { icon: 'ri-whatsapp-line', url: '#' },
-    { icon: 'ri-twitter-line', url: '#' },
-    { icon: 'ri-linkedin-line', url: '#' },
-    { icon: 'ri-instagram-line', url: '#' },
+    { icon: 'ri-whatsapp-line', url: 'https://api.whatsapp.com/send?phone=4915125011494' },
+    // { icon: 'ri-twitter-line', url: '#' },
+    { icon: 'ri-linkedin-line', url: 'https://www.linkedin.com/in/mykyta-mielkov-7b532b335/?locale=de_DE' },
+    // { icon: 'ri-instagram-line', url: '#' },
   ];
 
 
   contactInfo: IContactItem[] = [
-    { icon: 'ri-mail-send-line', text: 'example@gmail.com' },
-    { icon: 'ri-phone-line', text: '+1234567890' },
-    { icon: 'ri-map-pin-line', text: 'your city, country' },
+    { icon: 'ri-mail-send-line', text: 'nikitajohnson07.02@gmail.com' },
+    { icon: 'ri-map-pin-line', text: 'Waren' },
   ];
 }
