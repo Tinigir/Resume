@@ -1,0 +1,72 @@
+<section class="contact section grid" id="contact">
+  <div class="contact_container grid">
+    <div class="wrapper">
+      <div class="text_wrapper">
+        <div class="top">contact</div>
+        <div class="bottom" aria-hidden="true">contact</div>
+      </div>
+      <h3 class="sub_title">get in touch</h3>
+
+      <div class="contact_content">
+        <div class="contactContain">
+          <div class="contact_info" appScrollReveal>
+            <h3 class="con_title">contact info</h3>
+
+            <ul class="contact_details">
+              <li class="contact_item" *ngFor="let method of contactMethods">
+                <div class="contact_icon">
+                  <i [class]="method.icon"></i>
+                </div>
+                <div class="contact_method">
+                  <span>{{ method.title }}</span>
+                  <div>{{ method.data }}</div>
+                  <a [href]="method.link" target="_blank">
+                    <span>{{ method.actionText }} <i class="ri-arrow-right-up-line"></i></span>
+                  </a>
+                </div>
+              </li>
+            </ul>
+
+            <h3 class="con_title">social info</h3>
+            <ul class="contact_social_links icns">
+              <li *ngFor="let social of socialLinks">
+                <a [href]="social.link" target="_blank">
+                  <i [class]="social.icon"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="contactForm_container" appScrollReveal>
+            <h2>lets work <span>together</span></h2>
+            <p>Bold of you to assume I will answer within 24 hours!</p>
+
+            <form (submit)="onSubmit($event)" id="contact_form">
+              <div class="input_group">
+                <input type="text" name="full_name" placeholder="name *" required />
+              </div>
+              <div class="input_group">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="email *"
+                  required
+                  autocomplete="off"
+                />
+              </div>
+              <div class="input_group">
+                <input type="text" name="subject" placeholder="your subject *" required />
+              </div>
+              <div class="input_group">
+                <textarea name="message" placeholder="your message *" required></textarea>
+              </div>
+              <div class="input_group send_message">
+                <button class="submit_btn new_btn" type="submit">send message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,138 @@
+#about {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  align-items: center;
+}
+.abtImg_profile {
+  position: relative;
+  padding: 40px;
+  max-width: 400px;
+  margin-bottom: 10px;
+}
+.abtImg_border {
+  position: absolute;
+  border: 2px solid var(--text-color);
+  transition: 0.3s ease-in-out;
+  pointer-events: none;
+}
+.abtImg_border.one {
+  inset: 0 20px;
+}
+.abtImg_border.two {
+  inset: 20px 0;
+}
+.img_box {
+  margin-bottom: 30px;
+  max-width: fit-content;
+}
+.abtImg_profile p {
+  text-align: center;
+  font-size: var(--small-body);
+  margin-bottom: 10px;
+}
+.profile_name {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.profile_name span {
+  font-size: var(--h2);
+  font-weight: var(--f-500);
+}
+.abt_contactLink {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text-color);
+}
+.abt_contactLink .circle {
+  background-color: var(--black-color);
+  padding: 8px;
+  border-radius: 50%;
+  animation: pulse 3s infinite;
+  -webkit-animation: pulse 3s infinite;
+}
+.abt_contactLink span {
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.abt_content {
+  max-width: 400px;
+}
+.about_table {
+  width: 100%;
+  border-collapse: separate;
+  text-align: left;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.about_table tr {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.about_table tr a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+.about_table tr a:hover {
+  color: var(--black-color);
+}
+
+.about_table tr:not(:last-child) {
+  margin-bottom: 20px;
+}
+.about_table th {
+  text-transform: uppercase;
+}
+.download_cv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  padding: 40px 0;
+  border: 3px solid var(--glass-border);
+  text-transform: uppercase;
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  backdrop-filter: blur(15px);
+  background: var(--container-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+.download_cv:hover {
+  background: transparent;
+  box-shadow: 0 0 15px var(--highlight-color), 0 0 30px var(--highlight-color),
+    inset 5px 5px 15px rgba(0, 0, 0, 0.3), inset -5px -5px 15px rgba(255, 255, 255, 0.2);
+}
+.download_cv i {
+  font-size: var(--h2);
+}
+.download_cv span {
+  font-size: var(--body-text);
+}
+.download_cv i,
+.download_cv span {
+  color: var(--black-color);
+  transition: transform 0.3s ease, text-shadow 0.3s ease, color 0.3s ease;
+}
+.download_cv:hover i {
+  transform: scale(1.2) rotate(15deg);
+  text-shadow: 0 0 10px var(--highlight-color) 0 0 20px var(--highlight-color);
+}
+.download_cv:hover span {
+  transform: translateY(-5px);
+  text-shadow: 0 0 5px var(--shadow-color);
+}

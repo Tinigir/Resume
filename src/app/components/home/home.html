@@ -1,0 +1,27 @@
+<section class="home_section" id="home">
+	<div class="home_section">
+		<div class="icns icons" data-reveal="left">
+			@for (social of socials; track social.name) {
+			  <a [href]="social.link" class="icon" target="_blank" rel="noopener noreferrer">
+				<i [class]="social.icon"></i>
+			  </a>
+			}
+		  </div>
+	   <div class="image_container">
+		<div>
+			<img src="assets/img/home.jpg" alt="Home Image">
+		</div>
+		  <div class="new_btn">
+			 <a href="#portfolio">My Portfolio <i class="ri-arrow-right-line"></i></a>
+		  </div>
+	   </div>
+	   <div class="home_content" data-reveal="right">
+		  <div class="drop">
+			 <div class="home_text">
+				<h3>hi, I'm <span>{{fullName}}</span></h3>
+				<p>Front-End Developer. Angular/React Specialist. Crafting performant web experiences with precision code and modern aesthetics.</p>
+			 </div>
+		  </div>
+	   </div>
+	</div>
+ </section>

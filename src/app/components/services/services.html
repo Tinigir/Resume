@@ -1,0 +1,43 @@
+<section class="services section" id="services">
+  <div class="text_wrapper">
+    <div class="top">Services</div>
+    <div class="bottom" aria-hidden="true">Services</div>
+  </div>
+  <br />
+  <div class="sub_title">What i Offer</div>
+
+  <div class="services_container container grid">
+    <div class="services_content" *ngFor="let service of services; let i = index">
+      <div>
+        <i [class]="service.icon + ' service_icon'"></i>
+        <h3 class="sub_title" [innerHTML]="service.title"></h3>
+      </div>
+
+      <span class="service_btn" (click)="openModal(i)">
+        view more <i class="ri-arrow-right-line service_btn_icon"></i>
+      </span>
+
+      <div class="service_modal" [class.active]="activeModalIndex === i">
+        <div class="service_modal_content">
+          <i class="ri-close-circle-line service_modal_close" (click)="closeModal()"></i>
+
+          <h3 class="serviceModal_title">{{ service.modalTitle }}</h3>
+          <p class="serviceModal_description">{{ service.modalDesc }}</p>
+
+          <ul class="servicesModal_server grid">
+            <li class="serviceModal_points" *ngFor="let feature of service.features">
+              <i class="ri-star-line serviceModalIcon"></i>
+              <p class="serviceModal_info">{{ feature }}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="modal_overlay"
+    [class.active]="activeModalIndex !== null"
+    (click)="closeModal()"
+  ></div>
+</section>

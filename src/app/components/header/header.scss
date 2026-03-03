@@ -1,0 +1,82 @@
+.header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border: 3px solid var(--glass-border);
+  align-items: center;
+  justify-content: space-around;
+  height: clamp(70px, 10vw, 100px);
+  background: var(--glass-bg);
+  text-align: center;
+  padding: 2px 1px;
+  box-shadow: 0 10px 30px var(--shadow-color), inset 0 5px 8px var(--highlight-color);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  z-index: 9;
+  clip-path: none;
+}
+
+.header_link_container {
+  padding: 5px;
+  box-shadow: 0 10px 30px var(--shadow-color), inset 0 5px 8px var(--highlight-color);
+  border-radius: 10px;
+}
+
+.header_link_container:hover {
+  background-color: var(--glass-border);
+  transform: translateY(-5px);
+  transition: all 0.4s ease;
+}
+
+.head_name h3 {
+  font-size: var(--h2);
+  font-weight: bold;
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+.head_name p {
+  font-size: var(--small-body);
+  font-style: italic;
+  font-weight: var(--f-700);
+}
+.contactChat_head {
+  display: none;
+  gap: 50px;
+  margin-top: 0;
+}
+
+.theme-toggle {
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+  color: var(--black-color);
+}
+.contactChat_head a {
+  font-size: var(--small-body);
+  padding: var(--space-xs);
+  box-shadow: none;
+  text-decoration: none;
+  color: var(--black-color);
+}
+.contactChat_head a:hover {
+  border-radius: 12px;
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding: 30px 90px;
+    margin: 0 auto;
+    clip-path: polygon(0% 0%, 10% 0%, 15% 100%, 85% 100%, 90% 0%, 100% 0%);
+  }
+  .contactChat_head {
+    display: flex;
+  }
+  .icons {
+    order: -1;
+    flex-direction: column;
+  }
+  .contactForm_container {
+    width: 65%;
+  }
+}

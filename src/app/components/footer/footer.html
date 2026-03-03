@@ -1,0 +1,38 @@
+<footer class="footer">
+  <div class="footer_container">
+    <div class="footer_section about">
+      <h3 class="sub_title">about me</h3>
+      <p>
+        A passionate web designer and developer creating unique experiences with modern technology.
+        Let's build something amazing together!
+      </p>
+    </div>
+
+    <div class="footer_section links">
+      <h3 class="sub_title">quick links</h3>
+      <ul>
+        <li *ngFor="let link of quickLinks">
+          <a [href]="link.url">{{ link.label }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer_section social">
+      <h3 class="sub_title">connect</h3>
+      <div class="social_icons icns">
+        <a *ngFor="let social of socialLinks" [href]="social.url" class="icon" target="_blank">
+          <i [class]="social.icon"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer_section contact">
+      <h3 class="sub_title">contact</h3>
+      <p *ngFor="let item of contactInfo"><i [class]="item.icon + ' icon'"></i> {{ item.text }}</p>
+    </div>
+  </div>
+</footer>
+
+<div class="footer_bottom">
+  <p>@ {{ currentYear }} NerdyCodeCrafter. All Rights Reserved</p>
+</div>

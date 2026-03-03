@@ -1,0 +1,11 @@
+<div class="menu" (click)="toggleMenu()" [class.active]="isMenuOpen">
+  <span class="menu_icon"></span>
+</div>
+
+<div class="menu_links" [class.active]="isMenuOpen">
+  <a href="#home" (click)="closeMenu()">home</a>
+  <a href="#about" (click)="closeMenu()">about me</a>
+  <a href="#services" (click)="closeMenu()">Services</a>
+  <a href="#portfolio" (click)="closeMenu()">Portfolio</a>
+  <a href="#contact" (click)="closeMenu()">contact</a>
+</div>

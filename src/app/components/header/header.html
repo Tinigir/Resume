@@ -1,0 +1,16 @@
+<header class="header" id="header">
+  <div class="head_name" data-reveal>
+    <h3>{{ fullName }}</h3>
+    <p>{{ jobTitle }}</p>
+  </div>
+  <nav class="contactChat_head icns" data-reveal>
+    <div class="header_link_container">
+      <a href="mailto:{{ email }}" class="email icon">{{ email }}</a>
+    </div>
+    <div class="header_link_container">
+      <button class="theme-toggle" (click)="toggleTheme()">
+        <i [class]="isDark ? 'ri-sun-line' : 'ri-moon-line'"></i>
+      </button>
+    </div>
+  </nav>
+</header>

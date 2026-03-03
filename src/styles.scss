@@ -1,1 +1,231 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap');
+// Variables
+:root {
+  /* Core Colors */
+  --first-color: hsl(14, 98%, 50%);
+  --black-color: #2a2a2a;
+  --white-color: hsl(0, 0%, 95%);
+  --text-color: hsl(0, 0%, 35%);
+  --container-color: hsl(0, 0%, 83%);
+  --body-color: hsl(0, 0%, 87%);
+  --accent-color: rgba(255, 255, 255, 0.9);
+
+  /* Gradients & Effects */
+  --primary-bg: linear-gradient(135deg, #1b2735, #090a0f);
+  --glass-bg: rgba(255, 255, 255, 0.2);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --highlight-color: rgba(255, 255, 255, 0.6);
+
+  /*========== Font and typography ==========*/
+  --body-font: 'Bai Jamjuree', sans-serif;
+
+  --h1: clamp(2.5rem, 5vw, 4rem);
+  --h2: clamp(1.5rem, 4vw, 2.5rem);
+  --body-text: clamp(0.9rem, 2vw, 1.3rem);
+  --small-body: clamp(0.7rem, 1.5vw, 0.9rem);
+
+  /*========== Margin Padding ==========*/
+
+  --space-xs: clamp(0.75rem, 1vw, 1rem); /* Extra Small */
+  --space-sm: clamp(1rem, 2vw, 1.5rem); /* Small */
+  --space-md: clamp(1.5rem, 3vw, 2rem); /* Medium */
+  --space-lg: clamp(2rem, 4vw, 3rem); /* Large */
+  --space-xl: clamp(3rem, 5vw, 4rem); /* Extra Large */
+
+  /*========== Font weight ==========*/
+
+  --f-300: 300;
+  --f-400: 400;
+  --f-500: 500;
+  --f-600: 600;
+  --f-700: 700;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+
+  /*========== Box-Shadow ==========*/
+  --box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2), 0px 10px 20px rgba(0, 0, 0, 0.15),
+    0px 20px 40px rgba(0, 0, 0, 0.1);
+
+  /*========== Link Icon ==========*/
+  --icon-size: clamp(1rem, 1.7vw, 1.5rem);
+}
+
+body.dark-theme {
+  --body-color: hsl(220, 15%, 16%);
+  --container-color: hsl(220, 15%, 20%);
+
+  /*========== Text ==========*/
+  --text-color: hsl(0, 0%, 80%);
+  --black-color: #ffffff;
+
+  /*==========Glassmorphism ==========*/
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --highlight-color: rgba(255, 255, 255, 0.1);
+
+  /*========== Shadow ==========*/
+  --shadow-color: rgba(0, 0, 0, 0.8);
+  --box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5), 0px 10px 20px rgba(0, 0, 0, 0.4);
+
+  /*========== Highlights ==========*/
+  --accent-color: rgba(255, 255, 255, 0.1); /* Для скроллбара */
+
+  --primary-bg: linear-gradient(135deg, #000000, #1b2735);
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 9px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: var(--primary-bg);
+}
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: var(--accent-color);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: var(--text-color);
+}
+
+// (Reset)
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  text-transform: capitalize;
+  font-size: var(--small-body);
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container {
+  max-width: 95%;
+  margin-inline: var(--space-md);
+}
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.sub_title {
+  font-weight: var(--f-600);
+  margin: 1rem auto;
+  font-size: var(--h2);
+  text-align: center;
+  color: var(--black-color);
+}
+.text_wrapper {
+  display: grid;
+  place-content: center;
+  background-color: var(--body-color);
+  font-size: var(--h1);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--black-color);
+}
+.text_wrapper > div {
+  grid-area: 1/1/-1/-1;
+}
+.top {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 48%, 0% 58%);
+}
+.bottom {
+  clip-path: polygon(0% 60%, 100% 50%, 100% 100%, 0% 100%);
+  color: transparent;
+  background: -webkit-linear-gradient(177deg, black 53%, var(--text-color) 65%);
+  background: linear-gradient(177deg, black 53%, var(--text-color) 65%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  transform: translateX(-0.02em);
+}
+
+/*=============== BUTTON ===============*/
+
+button {
+  cursor: pointer;
+}
+
+.new_btn {
+	color: var(--black-color);
+  font-weight: var(--f-500);
+  background: var(--glass-bg, transparent);
+  border: 4px solid var(--glass-border);
+  padding: var(--space-xs) var(--space-md);
+  box-sizing: content-box;
+  border-radius: 8px;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  transition: all 0.5s ease-in-out;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3), 5px 5px 15px rgba(0, 0, 0, 0.4),
+    -3px -3px 10px rgba(255, 255, 255, 0.4);
+}
+.new_btn:is(:hover, :focus) {
+  border-color: transparent;
+  transform: translateY(-3px);
+  box-shadow: inset 1px 1px 3px var(--shadow-color), 8px 8px 20px var(--shadow-color),
+    -5px -5px 15px rgba(255, 255, 255, 0.5);
+  background-color: var(--highlight-color, rgba(255, 255, 255, 0.8));
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 5px 8px rgba(255, 255, 255, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), inset 0 8px 12px rgba(255, 255, 255, 0.4);
+    transform: scale(1.075);
+  }
+}
+
+@keyframes hanging {
+  0% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(-3deg);
+  }
+}
+
+@keyframes moveBlob {
+  0%,
+  100% {
+    border-radius: 51% 49% 48% 52% / 62% 44% 56% 38%;
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    border-radius: 48% 52% 58% 52% / 62% 44% 56% 38%;
+    transform: translate(-20px, 30px) scale(1.05);
+    -webkit-border-radius: 48% 52% 58% 52% / 62% 44% 56% 38%;
+    -moz-border-radius: 48% 52% 58% 52% / 62% 44% 56% 38%;
+    -ms-border-radius: 48% 52% 58% 52% / 62% 44% 56% 38%;
+    -o-border-radius: 48% 52% 58% 52% / 62% 44% 56% 38%;
+  }
+  50% {
+    border-radius: 55% 45% 45% 55% / 45% 55% 65% 35%;
+    transform: translate(20px, -20px) scale(1.1);
+  }
+  75% {
+    border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
+    transform: translate(-15px, -25px) scale(0.95);
+  }
+}

@@ -1,0 +1,97 @@
+.menu {
+  position: fixed;
+  bottom: 8%;
+  right: 5%;
+  width: clamp(3rem, 5vw, 4rem);
+  height: clamp(3rem, 5vw, 4rem);
+  background: var(--glass-bg);
+  border-radius: 50%;
+  border: 2px solid var(--glass-border);
+  box-shadow: 0 10px 30px var(--shadow-color), inset 0 5px 8px var(--highlight-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+  -webkit-animation: pulse 2s infinite;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+.menu:hover {
+  box-shadow: var(--box-shadow);
+}
+.menu_icon {
+  width: 50%;
+  height: 3px;
+  background: var(--text-color);
+  position: relative;
+  border-radius: 3px;
+  transition: all 0.4s ease;
+}
+.menu_icon::before,
+.menu_icon::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--text-color);
+  border-radius: 3px;
+  transition: all 0.4s ease;
+}
+.menu_icon::before {
+  top: -7px;
+}
+.menu_icon::after {
+  top: 7px;
+}
+.menu.active .menu_icon {
+  background: transparent;
+}
+.menu.active .menu_icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+.menu.active .menu_icon::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+.menu_links {
+  position: fixed;
+  z-index: 999;
+  bottom: 25%;
+  right: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+.menu_links a {
+  padding: var(--space-xs) var(--space-md);
+  background: var(--glass-bg);
+  font-weight: var(--f-500);
+  color: var(--text-color);
+  text-align: center;
+  border-radius: 15px;
+  border: 2px solid var(--glass-border);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 6px 20px var(--shadow-color), inset 0 2px 4px var(--highlight-color);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.menu_links a:hover {
+  color: var(--black-color);
+  background: var(--highlight-color);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), inset 0 3px 6px rgba(255, 255, 255, 0.4);
+  transform: translateY(-3px);
+}
+.menu.active + .menu_links {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}

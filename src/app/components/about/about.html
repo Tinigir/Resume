@@ -1,0 +1,58 @@
+<section id="about" class="about">
+  <div class="abtImg_profile" data-reveal="left">
+    <div class="abtImg_border one"></div>
+    <div class="abtImg_border two"></div>
+    <div class="img_box">
+      <img src="assets/img/about.jpg" alt="" class="abtImg" width="100%" />
+    </div>
+    <div class="profile_name">
+      <div class="sub_title">{{ name }}</div>
+      <a href="#contact" class="abt_contactLink">
+        <span class="circle"></span>
+        <div>i'm available for freelance job, hire me!</div>
+      </a>
+    </div>
+  </div>
+  <div class="abt_content" data-reveal="right">
+    <div class="text_wrapper">
+      <div class="top">{{ title }}</div>
+      <div class="bottom" aria-hidden="true">{{ title }}</div>
+    </div>
+    <h2 class="sub_title">biography</h2>
+    <p class="section_desc">
+      Hi! I’m {{ name }}, a Web Developer dedicated to building scalable and intuitive user
+      interfaces. My expertise is centered on Frontend development using React and Angular, allowing
+      me to select the most effective tools for specific business goals.
+    </p>
+    <table class="about_table">
+      <tr>
+        <th>name:</th>
+        <td>{{ name }}</td>
+      </tr>
+      <tr>
+        <th>birthday:</th>
+        <td>{{ birthDate | date : 'd MMMM y' }}</td>
+      </tr>
+      <tr>
+        <th>age:</th>
+        <td>{{ age }}</td>
+      </tr>
+      <tr>
+        <th>email:</th>
+        <td>
+          <a href="{{ email }}" class="link_underline">{{ email }}</a>
+        </td>
+      </tr>
+      <tr>
+        <th>Linkedin:</th>
+        <td>
+          <a href="#" class="link_underline">{{ link }}</a>
+        </td>
+      </tr>
+    </table>
+    <a href="assets/Lebenslauf_Mykyta_Mielkov.pdf" download="My_Resume.pdf" class="download_cv">
+      <i class="ri-download-cloud-line icn"></i>
+      <span>download CV</span>
+    </a>
+  </div>
+</section>

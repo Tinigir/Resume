@@ -1,0 +1,36 @@
+<section class="portfolio section grid" id="portfolio">
+  <div class="text_wrapper">
+    <div class="top">Portfolio</div>
+    <div class="bottom" aria-hidden="true">Portfolio</div>
+  </div>
+
+  <div class="filter" appScrollReveal>
+    <button
+      *ngFor="let cat of categories"
+      class="filter_btn new_btn"
+      [class.active-btn]="currentFilter === cat.key"
+      (click)="setFilter(cat.key)"
+    >
+      {{ cat.label }}
+    </button>
+  </div>
+
+  <div class="timeline" #timelineContainer>
+    <div
+      class="timeline_item"
+      *ngFor="let project of projects"
+      [class.active]="isActive(project.category)"
+      [class.inactive]="!isActive(project.category)"
+      [ngClass]="project.category"
+    >
+      <img [src]="project.img" [alt]="project.category" />
+
+      <div class="timeline_year">{{ project.year }}</div>
+
+      <div class="project_info" appScrollReveal class="right">
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,145 @@
+.text_wrapper{
+	margin-top: 100px;
+}
+
+.services_container {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-content: center;
+  column-gap: 0.5rem;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: var(--space-xs);
+}
+
+.services_content {
+  position: relative;
+  background: var(--glass-bg);
+  border: 2px solid var(--glass-border);
+  padding: var(--space-lg);
+  border-radius: 1.25rem;
+  div .sub_title {
+    text-align: left;
+    font-size: var(--body-text);
+  }
+}
+
+.service_icon {
+  display: block;
+  font-size: var(--icon-size);
+  color: var(--black-color);
+  font-weight: var(--f-700);
+  margin-bottom: 1rem;
+}
+
+.service_btn {
+  display: flex;
+  align-items: center;
+  column-gap: 0.25rem;
+  cursor: pointer;
+}
+
+.service_btn_icon {
+  transition: 0.3s;
+  font-size: var(--icon-size);
+}
+
+.service_btn:hover .service_btn_icon {
+  transform: translateX(0.25rem);
+}
+
+
+.service_modal {
+  position: fixed;
+  color: var(--black-color);
+  border: 4px solid var(--accent-color);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 90%;
+  max-width: 600px;
+  background: var(--body-color);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  z-index: 20;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+
+  &.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.service_modal_content {
+  padding: var(--space-xs);
+  position: relative;
+}
+
+.service_modal_close {
+  font-size: var(--icon-size);
+  color: var(--text-color);
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &:hover {
+    color: var(--black-color);
+  }
+}
+
+.serviceModal_title {
+  font-size: var(--body-text);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.serviceModal_description {
+  font-size: var(--small-body);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.servicesModal_server {
+  display: grid;
+  grid-auto-rows: auto;
+  row-gap: 10px;
+  padding: 0;
+}
+
+.serviceModal_points {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.serviceModalIcon {
+  font-size: var(--icon-size);
+  color: var(--black-color);
+}
+
+.serviceModal_info {
+  font-size: var(--small-body);
+}
+
+.modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 15;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
